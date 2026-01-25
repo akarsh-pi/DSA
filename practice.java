@@ -1,42 +1,23 @@
-
+import java.util.*;
 public class practice {
-    // Continue loop as long as both
-    // a and b are greater than 0
-    public static int findGcd(int a, int b) {
-        while(a > 0 && b > 0) {
-            // If a is greater than b,
-            // subtract b from a and update a
-            if(a > b) {
-                // Update a to the remainder
-                // of a divided by b
-                a = a - b;
-            }
-            // If b is greater than or equal
-            // to a, subtract a from b and update b
-            else {
-                // Update b to the remainder
-                // of b divided by a
-                b = b - a;
-            }
+    public static int fibonacci(int N) {
+        // Base case: return N if it's 0 or 1
+        if (N <= 1) {
+            return N;
         }
-        // Check if a becomes 0,
-        // if so, return b as the GCD
-        if(a == 0) {
-            return b;
-        }
-        // If a is not 0,
-        // return a as the GCD
-        return a;
+
+        // Recursive case: calculate previous two terms
+        int last = fibonacci(N - 1);    // (N-1)th term
+        int slast = fibonacci(N - 2);   // (N-2)th term
+
+        return last + slast;
     }
 
     public static void main(String[] args) {
-        int n1 = 9, n2 = 12;
-
-        // Find the GCD of n1 and n2
-        int gcd = findGcd(n1, n2);
-
-        System.out.println("GCD of " + n1 + " and " + n2 + " is: " + gcd);
+        int N = 4;
+        System.out.println(fibonacci(N));  // Output: 3
     }
-}
+ }
+
     
                                 
