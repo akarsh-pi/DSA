@@ -1,21 +1,27 @@
 import java.util.*;
 public class practice {
-    public static int fibonacci(int N) {
-        // Base case: return N if it's 0 or 1
-        if (N <= 1) {
-            return N;
-        }
-
-        // Recursive case: calculate previous two terms
-        int last = fibonacci(N - 1);    // (N-1)th term
-        int slast = fibonacci(N - 2);   // (N-2)th term
-
-        return last + slast;
-    }
-
     public static void main(String[] args) {
-        int N = 4;
-        System.out.println(fibonacci(N));  // Output: 3
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of elements in the array: ");
+        int n = sc.nextInt();
+        int a[] = new int[n];
+        for(int i=0; i<n; i++){
+            a[i] = sc.nextInt();
+        }
+        for(int i=0; i<n-1; i++){
+            int smallest = a[i];
+            for(int j=i+1; j<n; j++){
+                if(a[j]<smallest){
+                    smallest = a[j];
+                }
+            }
+            int temp = a[i];
+            a[i] = smallest;
+            smallest = temp;
+        }
+        for(int i=0; i<n; i++){
+            System.out.print(a[i]+ " ");
+        }
     }
  }
 

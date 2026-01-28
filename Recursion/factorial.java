@@ -5,7 +5,7 @@ public class factorial {
             return 1;
         }
         else{
-            return n * fact(n-1)
+            return n * fact(n-1);
         }
     }
     public static void main(String[] args){
