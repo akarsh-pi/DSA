@@ -9,15 +9,13 @@ public class practice {
             a[i] = sc.nextInt();
         }
         for(int i=0; i<n-1; i++){
-            int smallest = a[i];
-            for(int j=i+1; j<n; j++){
-                if(a[j]<smallest){
-                    smallest = a[j];
+            for(int j=0; j<n-1; j++){
+                if(a[j]>a[j+1]){
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
                 }
             }
-            int temp = a[i];
-            a[i] = smallest;
-            smallest = temp;
         }
         for(int i=0; i<n; i++){
             System.out.print(a[i]+ " ");
