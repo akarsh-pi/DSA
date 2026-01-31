@@ -12,7 +12,6 @@ public class KeypadCombinations {
         for(int i=0; i<mapping.length(); i++){
             Keypad(str, idx+1, Combination + mapping.charAt(i));
         }
-        
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
