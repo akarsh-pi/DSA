@@ -1,5 +1,5 @@
 import java.util.*;
-public class practice {
+public class Problem486A {
     public static int fofn(int n){
         int result=0;
         for(int i=1; i<=n; i++){
