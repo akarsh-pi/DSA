@@ -1,25 +1,45 @@
 import java.util.*;
+class Ref {
+
+    int x;
+
+ 
+
+    Ref(int x) {
+
+        this.x = x;
+
+    }
+
+}
 public class practice {
+    static void change(Ref r1, Ref r2) {
+
+        r1.x = r1.x + 10;
+
+        r2 = new Ref(50);
+
+        r2.x = r2.x + r1.x;
+
+    }
+
+ 
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String result[] = new String[n];
-        for(int i=0; i<n; i++){
-            result[i]="";
-        }
-        for(int i=0; i<n; i++){
-            String s = sc.next();
-            if(s.length()>10){
-                result[i]+=s.charAt(0);
-                result[i]+=(s.length()-2);
-                result[i]+=s.charAt(s.length()-1);
-            }
-            else{
-                result[i]=s;
-            }
-        }
-        for(int i=0; i<n; i++){
-            System.out.println(result[i]);
-        }
+
+ 
+
+        Ref a = new Ref(10);
+
+        Ref b = new Ref(20);
+
+ 
+
+        change(a, b);
+
+ 
+
+        System.out.println(a.x + " " + b.x);
+
     }
 } 
