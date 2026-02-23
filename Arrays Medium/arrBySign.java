@@ -26,8 +26,28 @@ public class arrBySign {
             System.out.print(a[i] + " ");
         }
     }
+    public static void optimal(int a[]){
+        int a2[] = new int[a.length];
+        int x=0;
+        int y=1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]>0){
+                a2[x] = a[i];
+                x+=2;
+            }
+            if(a[i]<0){
+                a2[y] = a[i];
+                y+=2;
+            }
+        }
+        for(int i=0; i<a2.length; i++){
+            System.out.print(a2[i] + " ");
+        }
+    }
     public static void main(String[] args) {
-        int a[] = {1,2,-3,-1,-2,-3};
+        int a[] = {1,2,3,-1,-2,-3};
         rearrange(a);
+        System.out.println();
+        optimal(a);
     }
 }
