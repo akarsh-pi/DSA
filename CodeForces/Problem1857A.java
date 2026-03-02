@@ -1,5 +1,5 @@
 import java.util.*;
-public class practice {
+public class Problem1857A {
     public static boolean Solution(int a[], int n) {
         int odd = 0;
         
